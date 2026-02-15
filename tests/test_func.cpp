@@ -115,3 +115,11 @@ void test_delete_spase_start_end_string(void) {
     CU_ASSERT_STRING_EQUAL(delete_spase(string), expected);
 }
 
+// Part 11.
+void test_shift_elements(void) {
+  int array[]{1, 2, 3, 4, -1, -2, -3, -4, 5};
+  int expected[]{1, 2, 3, 4, -1, 0, 0, 0, 0};
+
+  shiftLeft<int>(array, 4);
+  CU_ASSERT_EQUAL(memcmp(array, expected, sizeof(array) / sizeof(*array)), 0);
+}

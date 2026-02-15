@@ -22,6 +22,7 @@ int main(void) {
   CU_pSuite pSuite_part8 = CU_add_suite("Part 8. Suite_equal_value", NULL, NULL);
   CU_pSuite pSuite_part9 = CU_add_suite("Part 9", NULL, NULL);
   CU_pSuite pSuite_part10 = CU_add_suite("Part 10. Delete spase start && end", NULL, NULL);
+  CU_pSuite pSuite_part11 = CU_add_suite("Part 10. Shift elements", NULL, NULL);
 
 
   if (!pSuite_part1 || !pSuite_part2 || !pSuite_part3) {
@@ -126,6 +127,10 @@ int main(void) {
   }
 
   if(!test_succes(CU_add_test(pSuite_part10, "test delete spase start && end", test_delete_spase_start_end_string))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+  if(!test_succes(CU_add_test(pSuite_part11, "test shift elements", test_delete_spase_start_end_string))) {
     CU_cleanup_registry();
     return CU_get_error();
   }

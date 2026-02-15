@@ -57,6 +57,22 @@ T filter_the_array(const T (&array)[N], bool (*filter)(T, T), T value) {
 
 char* delete_spase(char string[]);
 
+template <typename T, size_t N>
+void shiftLeft(T (&array)[N], int k) {
+    if (k <= 0) return;
+    
+    if (k >= N) {
+        for (int i = 0; i < N; i++) array[i] = 0;
+        return;
+    }
 
+    for (int i = 0; i < N - k; i++) {
+        array[i] = array[i + k];
+    }
+
+    for (int i = N - k; i < N; i++) {
+        array[i] = 0;
+    }
+}
 
 #endif
