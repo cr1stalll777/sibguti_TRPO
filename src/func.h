@@ -55,5 +55,8 @@ T filter_the_array(const T (&array)[N], bool (*filter)(T, T), T value) {
   return counter;
 }
 
+char* delete_spase(char string[]);
+
+
 
 #endif

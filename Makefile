@@ -8,7 +8,7 @@ prog:
 	$(GCC) $(FLAGS) -o main main.c func.c 
 
 test:
-	$(GCC) $(FLAGS) tests/*.cpp -o $(BUILD_DIR)/test_runner -lcunit
+	$(GCC) $(FLAGS) tests/*.cpp src/func.cpp -o $(BUILD_DIR)/test_runner -lcunit
 	./$(BUILD_DIR)/test_runner
 
 lint:

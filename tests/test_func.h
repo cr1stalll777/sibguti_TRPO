@@ -37,4 +37,10 @@ void test_not_find_in_array(void);
 void test_counter_if_equal_in_array(void);
 void test_counter_if_not_equal_in_array(void);
 
+// Part 9.
+void test_counter_if_gt_in_array(void);
+
+// Part 10. 
+
+void test_delete_spase_start_end_string(void);
 #endif

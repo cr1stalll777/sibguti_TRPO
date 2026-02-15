@@ -20,6 +20,8 @@ int main(void) {
   CU_pSuite pSuite_part6 = CU_add_suite("Part 6. Suite_averange_number", NULL, NULL);
   CU_pSuite pSuite_part7 = CU_add_suite("Part 7. Suite_find_number", NULL, NULL);
   CU_pSuite pSuite_part8 = CU_add_suite("Part 8. Suite_equal_value", NULL, NULL);
+  CU_pSuite pSuite_part9 = CU_add_suite("Part 9", NULL, NULL);
+  CU_pSuite pSuite_part10 = CU_add_suite("Part 10. Delete spase start && end", NULL, NULL);
 
 
   if (!pSuite_part1 || !pSuite_part2 || !pSuite_part3) {
@@ -116,6 +118,19 @@ int main(void) {
     CU_cleanup_registry();
     return CU_get_error();
   }
+
+// Part 9.
+  if(!test_succes(CU_add_test(pSuite_part9, "test gt value", test_counter_if_gt_in_array))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+
+  if(!test_succes(CU_add_test(pSuite_part10, "test delete spase start && end", test_delete_spase_start_end_string))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+
+
 
   CU_basic_set_mode(CU_BRM_VERBOSE);
   CU_basic_run_tests();
