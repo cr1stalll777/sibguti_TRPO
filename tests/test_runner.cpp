@@ -22,7 +22,13 @@ int main(void) {
   CU_pSuite pSuite_part8 = CU_add_suite("Part 8. Suite_equal_value", NULL, NULL);
   CU_pSuite pSuite_part9 = CU_add_suite("Part 9", NULL, NULL);
   CU_pSuite pSuite_part10 = CU_add_suite("Part 10. Delete spase start && end", NULL, NULL);
-  CU_pSuite pSuite_part11 = CU_add_suite("Part 10. Shift elements", NULL, NULL);
+  CU_pSuite pSuite_part11 = CU_add_suite("Part 11. Shift elements", NULL, NULL);
+  CU_pSuite pSuite_part12 = CU_add_suite("Part 12. Reverse string", NULL, NULL);
+  CU_pSuite pSuite_part13 = CU_add_suite("Part 13. Delete all spase", NULL, NULL);
+  CU_pSuite pSuite_part14 = CU_add_suite("Part 14. Is triangle", NULL, NULL);
+  CU_pSuite pSuite_part15 = CU_add_suite("Part 15. Capitalize", NULL, NULL);
+  CU_pSuite pSuite_part16 = CU_add_suite("Part 16. Abbreviate", NULL, NULL);
+  CU_pSuite pSuite_part17 = CU_add_suite("Part 17. Сalculate shipping", NULL, NULL);
 
 
   if (!pSuite_part1 || !pSuite_part2 || !pSuite_part3) {
@@ -126,16 +132,58 @@ int main(void) {
     return CU_get_error();
   }
 
+  // Part 10.
   if(!test_succes(CU_add_test(pSuite_part10, "test delete spase start && end", test_delete_spase_start_end_string))) {
     CU_cleanup_registry();
     return CU_get_error();
   }
-  if(!test_succes(CU_add_test(pSuite_part11, "test shift elements", test_delete_spase_start_end_string))) {
+
+// Part 11.
+  if(!test_succes(CU_add_test(pSuite_part11, "test shift elements", test_shift_elements))) {
     CU_cleanup_registry();
     return CU_get_error();
   }
 
+//Part 12.
+  if(!test_succes(CU_add_test(pSuite_part12, "Test reverse string", test_reverse_string))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
 
+// Part 13.
+  if(!test_succes(CU_add_test(pSuite_part13, "test delete all spase", test_delete_all_space))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+
+// Part 14.
+  if(!test_succes(CU_add_test(pSuite_part14, "test triangle", test_is_triangle))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+
+  if(!test_succes(CU_add_test(pSuite_part14, "test not triangle", test_is_not_triangle))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+
+// Part 15.
+  if(!test_succes(CU_add_test(pSuite_part15, "Test capitalize", test_capitalize))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+  
+// Part 16.
+  if(!test_succes(CU_add_test(pSuite_part16, "Test abbreviate", test_abbreviate))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
+
+// Part 17.
+  if(!test_succes(CU_add_test(pSuite_part17, "Test calculate shipping", test_calculate_shipping))) {
+    CU_cleanup_registry();
+    return CU_get_error();
+  }
 
   CU_basic_set_mode(CU_BRM_VERBOSE);
   CU_basic_run_tests();

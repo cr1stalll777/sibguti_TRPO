@@ -45,4 +45,24 @@ void test_delete_spase_start_end_string(void);
 
 // Part 11. 
 void test_shift_elements(void);
+
+
+// Patr 12.
+void test_reverse_string(void);
+
+// Part 13.
+void test_delete_all_space(void);
+
+// Part 14.
+void test_is_triangle(void);
+void test_is_not_triangle(void);
+
+// Part 15.
+void test_capitalize(void);
+
+// Part 16.
+void test_abbreviate(void);
+
+// Part 17.
+void test_calculate_shipping(void);
 #endif

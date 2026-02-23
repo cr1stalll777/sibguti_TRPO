@@ -118,8 +118,82 @@ void test_delete_spase_start_end_string(void) {
 // Part 11.
 void test_shift_elements(void) {
   int array[]{1, 2, 3, 4, -1, -2, -3, -4, 5};
-  int expected[]{1, 2, 3, 4, -1, 0, 0, 0, 0};
+  int expected[]{-1, -2, -3, -4, 5, 0, 0, 0, 0};
 
   shiftLeft<int>(array, 4);
-  CU_ASSERT_EQUAL(memcmp(array, expected, sizeof(array) / sizeof(*array)), 0);
+  CU_ASSERT_EQUAL(memcmp(array, expected, sizeof(array)), 0);
+}
+
+// Part 12.
+
+void test_reverse_string(void) {
+      char string[] = "hello";
+      const char* expected = "olleh";
+      
+      CU_ASSERT_STRING_EQUAL(reverse_string(string), expected);
+}
+
+// Part 13.
+void test_delete_all_space(void) {
+      char string[] = "   Hello Artem!   Hi HI   ";
+      const char* expected = "HelloArtem!HiHI";
+
+      CU_ASSERT_STRING_EQUAL(delete_all_spase(string), expected);
+}
+
+// Part 14.
+void test_is_triangle(void) {
+  int a = 5;
+  int b = 6;
+  int c = 7;
+  CU_ASSERT_TRUE(is_triangle(a,b,c));
+}
+
+void test_is_not_triangle(void) {
+  int a = 5;
+  int b = 2;
+  int c = 1;
+  CU_ASSERT_FALSE(is_triangle(a,b,c));
+}
+
+// Part 15.
+void test_capitalize(void) {
+  char string[] = "summer";
+  const char* expected = "Summer";
+
+  CU_ASSERT_STRING_EQUAL(capitalize(string), expected);
+}
+
+
+// Part 16.
+void test_abbreviate(void) {
+  char word1[] = "localization";
+  const char* expected1 = "l10n";
+  CU_ASSERT_STRING_EQUAL(abbreviate(word1), expected1);
+
+  char word2[] = "internationalization";
+  const char* expected2 = "i18n";
+  CU_ASSERT_STRING_EQUAL(abbreviate(word2), expected2);
+
+  // Слово ровно 10 символов - НЕ должно сокращаться
+  char word3[] = "0123456789";
+  const char* expected3 = "0123456789";
+  CU_ASSERT_STRING_EQUAL(abbreviate(word3), expected3);
+
+  // Короткое слово - без изменений
+  char word4[] = "word";
+  const char* expected4 = "word";
+  CU_ASSERT_STRING_EQUAL(abbreviate(word4), expected4);
+
+}
+
+// Part 17.
+void test_calculate_shipping(void) {
+  CU_ASSERT_EQUAL(calculate_shipping(1), 780);
+  
+  CU_ASSERT_EQUAL(calculate_shipping(3), 1200);
+  
+  CU_ASSERT_EQUAL(calculate_shipping(0), 0);
+  
+  CU_ASSERT_EQUAL(calculate_shipping(10), 2670);
 }

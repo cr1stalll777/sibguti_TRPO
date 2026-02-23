@@ -74,5 +74,15 @@ void shiftLeft(T (&array)[N], int k) {
         array[i] = 0;
     }
 }
+char* reverse_string(char string[]);
+char* delete_all_spase(char string[]);
 
+template <typename T>
+bool is_triangle(T a, T b, T c) {
+  return (a + b > c) && (a + c > b) && (b + c > a);
+}
+
+char* capitalize(char word[]);
+char* abbreviate(char word[]);
+int calculate_shipping(int count);
 #endif
